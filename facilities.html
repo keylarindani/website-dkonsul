@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas Kesehatan - dkonsul</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>dkonsul</h1></a>
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="index.html#beranda" class="nav-link">Beranda</a>
+                    <a href="index.html#layanan" class="nav-link">Layanan</a>
+                    <a href="doctors.html" class="nav-link">Dokter</a>
+                    <a href="facilities.html" class="nav-link active">Faskes</a>
+                    <a href="articles.html" class="nav-link">Artikel</a>
+                </nav>
+                
+                <div class="user-actions">
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <i class="fas fa-user"></i>
+                        <span id="userName"></span>
+                        <button class="btn-logout" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </div>
+                    <button class="btn-login" id="loginBtn">Masuk</button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Fasilitas Kesehatan</h1>
+                <p>Temukan fasilitas kesehatan terdekat dan buat janji temu</p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="facilitySearch" placeholder="Cari nama fasilitas atau layanan...">
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Jenis Fasilitas</label>
+                        <select id="typeFilter">
+                            <option value="">Semua Jenis</option>
+                            <option value="Rumah Sakit">Rumah Sakit</option>
+                            <option value="Klinik">Klinik</option>
+                            <option value="Laboratorium">Laboratorium</option>
+                            <option value="Apotek">Apotek</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Lokasi</label>
+                        <select id="locationFilter">
+                            <option value="">Semua Lokasi</option>
+                            <option value="Jakarta Pusat">Jakarta Pusat</option>
+                            <option value="Jakarta Selatan">Jakarta Selatan</option>
+                            <option value="Jakarta Barat">Jakarta Barat</option>
+                            <option value="Jakarta Timur">Jakarta Timur</option>
+                            <option value="Jakarta Utara">Jakarta Utara</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Urutkan</label>
+                        <select id="sortFilter">
+                            <option value="distance">Jarak Terdekat</option>
+                            <option value="rating">Rating Tertinggi</option>
+                            <option value="reviews">Ulasan Terbanyak</option>
+                            <option value="name">Nama A-Z</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="emergencyFilter">
+                            <span>Hanya IGD 24 Jam</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Results Count -->
+                <div class="results-count" id="resultsCount">
+                    Menampilkan 6 dari 6 fasilitas
+                </div>
+            </div>
+
+            <!-- Facilities List -->
+            <div class="facilities-list" id="facilitiesList">
+                <!-- Facilities will be populated by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Tidak ada fasilitas ditemukan</h3>
+                <p>Coba ubah filter pencarian Anda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>dkonsul</h3>
+                    <p>Platform kesehatan digital terpercaya untuk konsultasi dengan dokter kapan saja, di mana saja.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="index.html#layanan">Chat Dokter</a></li>
+                        <li><a href="index.html#layanan">Video Call</a></li>
+                        <li><a href="doctors.html">Dokter</a></li>
+                        <li><a href="facilities.html">Fasilitas Kesehatan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 dkonsul. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="facilities.js"></script>
+</body>
+</html>

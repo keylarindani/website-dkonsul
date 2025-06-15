@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dkonsul - Konsultasi Kesehatan Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Darurat Medis? Hubungi 119 atau kunjungi IGD terdekat</span>
+                <button class="emergency-btn" onclick="showEmergencyModal()">
+                    <i class="fas fa-phone"></i> Darurat
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>dkonsul</h1>
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="#beranda" class="nav-link">Beranda</a>
+                    <a href="#layanan" class="nav-link">Layanan</a>
+                    <a href="doctors.html" class="nav-link">Dokter</a>
+                    <a href="facilities.html" class="nav-link">Faskes</a>
+                    <a href="articles.html" class="nav-link">Artikel</a>
+                </nav>
+                
+                <div class="user-actions">
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <i class="fas fa-user"></i>
+                        <span id="userName"></span>
+                        <button class="btn-logout" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </div>
+                    <button class="btn-login" id="loginBtn">Masuk</button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="#beranda" class="nav-link">Beranda</a>
+                <a href="#layanan" class="nav-link">Layanan</a>
+                <a href="doctors.html" class="nav-link">Dokter</a>
+                <a href="facilities.html" class="nav-link">Faskes</a>
+                <a href="articles.html" class="nav-link">Artikel</a>
+                <div class="mobile-user-actions">
+                    <div class="mobile-user-info" id="mobileUserInfo" style="display: none;">
+                        <i class="fas fa-user"></i>
+                        <span id="mobileUserName"></span>
+                        <button class="btn-logout" id="mobileLogoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </div>
+                    <button class="btn-login" id="mobileLoginBtn">Masuk</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Konsultasi Kesehatan <span class="text-primary">Kapan Saja</span><br><span class="text-primary">Di Mana Saja</span></h1>
+                    <p>Konsultasi kesehatan Anda dengan dokter terpercaya secara cepat, mudah, dan aman melalui platform dkonsul.</p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn-primary" id="consultBtn">
+                            <i class="fas fa-comments"></i>
+                            <span id="consultBtnText">Konsultasi Sekarang</span>
+                        </button>
+                        <button class="btn-outline" id="askMeBtn">
+                            <i class="fas fa-question-circle"></i>
+                            Tanya Gejala
+                        </button>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Dokter Terpercaya</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Pasien Dilayani</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Layanan Tersedia</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Doctor consultation illustration">
+                        <div class="floating-icon floating-icon-1">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="floating-icon floating-icon-2">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="layanan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Kesehatan Lengkap</h2>
+                <p>Berbagai layanan kesehatan digital untuk memenuhi kebutuhan Anda dan keluarga</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card popular">
+                    <div class="popular-badge">Populer</div>
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat Dokter</h3>
+                    <p>Konsultasi melalui chat dengan dokter umum dan spesialis</p>
+                    <div class="service-price">Mulai dari Rp 25.000</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Call</h3>
+                    <p>Konsultasi tatap muka langsung melalui video call</p>
+                    <div class="service-price">Mulai dari Rp 50.000</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Janji Temu</h3>
+                    <p>Buat janji temu dengan dokter di fasilitas kesehatan</p>
+                    <div class="service-price">Sesuai tarif faskes</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-prescription"></i>
+                    </div>
+                    <h3>Resep Digital</h3>
+                    <p>Dapatkan resep digital yang dapat ditebus di apotek</p>
+                    <div class="service-price">Gratis</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Pengiriman Obat</h3>
+                    <p>Pesan obat online dan dikirim langsung ke rumah</p>
+                    <div class="service-price">Ongkir mulai Rp 10.000</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cek Kesehatan</h3>
+                    <p>Monitoring kesehatan rutin dan reminder obat</p>
+                    <div class="service-price">Gratis</div>
+                    <button class="btn-service">Pilih Layanan</button>
+                </div>
+            </div>
+            
+            <div class="doctors-cta">
+                <a href="doctors.html">
+                    <button class="btn-secondary">Lihat Semua Dokter</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="dokter">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dokter Terpercaya</h2>
+                <p>Temui para profesional medis terbaik kami</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Sarah Wijaya" class="doctor-avatar">
+                        <div class="online-status"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Wijaya</h3>
+                        <p class="specialty">Dokter Spesialis Jantung</p>
+                        <div class="doctor-credentials">
+                            <span>Sp.JP, FIHA</span>
+                            <span>15 tahun pengalaman</span>
+                        </div>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (234 ulasan)</span>
+                        </div>
+                        <div class="consultation-fee">
+                            <span>Konsultasi: Rp 75.000</span>
+                        </div>
+                        <button class="btn-primary btn-full">Konsultasi Sekarang</button>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Ahmad Pratama" class="doctor-avatar">
+                        <div class="online-status"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Ahmad Pratama</h3>
+                        <p class="specialty">Dokter Spesialis Anak</p>
+                        <div class="doctor-credentials">
+                            <span>Sp.A, M.Kes</span>
+                            <span>12 tahun pengalaman</span>
+                        </div>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (189 ulasan)</span>
+                        </div>
+                        <div class="consultation-fee">
+                            <span>Konsultasi: Rp 65.000</span>
+                        </div>
+                        <button class="btn-primary btn-full">Konsultasi Sekarang</button>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-image-container">
+                        <img src="https://images.unsplash.com/photo-1594824475317-1ad6b5d2e2b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Maya Sari" class="doctor-avatar">
+                        <div class="online-status offline"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Maya Sari</h3>
+                        <p class="specialty">Dokter Spesialis Kulit</p>
+                        <div class="doctor-credentials">
+                            <span>Sp.KK, FINSDV</span>
+                            <span>10 tahun pengalaman</span>
+                        </div>
+                        <div class="doctor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (156 ulasan)</span>
+                        </div>
+                        <div class="consultation-fee">
+                            <span>Konsultasi: Rp 80.000</span>
+                        </div>
+                        <button class="btn-outline btn-full">Jadwalkan Nanti</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doctors-cta">
+                <a href="doctors.html">
+                    <button class="btn-secondary">Lihat Semua Dokter</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Facilities Section -->
+    <section class="facilities" id="faskes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fasilitas Kesehatan</h2>
+                <p>Jaringan fasilitas kesehatan terpercaya di seluruh Indonesia</p>
+            </div>
+            
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="RS Siloam" class="facility-image">
+                    <div class="facility-info">
+                        <h3>RS Siloam Kebon Jeruk</h3>
+                        <p class="facility-type">Rumah Sakit</p>
+                        <div class="facility-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta Barat - 2.5 km</span>
+                        </div>
+                        <div class="facility-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (234 ulasan)</span>
+                        </div>
+                        <div class="facility-services">
+                            <span class="service-tag">IGD 24 Jam</span>
+                            <span class="service-tag">Rawat Inap</span>
+                            <span class="service-tag">MCU</span>
+                        </div>
+                        <button class="btn-primary">Buat Janji</button>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Klinik Kimia Farma" class="facility-image">
+                    <div class="facility-info">
+                        <h3>Klinik Kimia Farma</h3>
+                        <p class="facility-type">Klinik</p>
+                        <div class="facility-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tanjung Duren - 1.2 km</span>
+                        </div>
+                        <div class="facility-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.6 (89 ulasan)</span>
+                        </div>
+                        <div class="facility-services">
+                            <span class="service-tag">Konsultasi Umum</span>
+                            <span class="service-tag">Lab</span>
+                            <span class="service-tag">Apotek</span>
+                        </div>
+                        <button class="btn-primary">Buat Janji</button>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="RS Hermina" class="facility-image">
+                    <div class="facility-info">
+                        <h3>RS Hermina Daan Mogot</h3>
+                        <p class="facility-type">Rumah Sakit</p>
+                        <div class="facility-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Daan Mogot - 3.8 km</span>
+                        </div>
+                        <div class="facility-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.7 (156 ulasan)</span>
+                        </div>
+                        <div class="facility-services">
+                            <span class="service-tag">IGD 24 Jam</span>
+                            <span class="service-tag">ICU</span>
+                            <span class="service-tag">Bedah</span>
+                        </div>
+                        <button class="btn-primary">Buat Janji</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="facilities-cta">
+                <a href="facilities.html">
+                    <button class="btn-secondary">Lihat Semua Fasilitas</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles" id="artikel">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artikel Kesehatan</h2>
+                <p>Informasi kesehatan terpercaya dari para ahli</p>
+            </div>
+            
+            <div class="articles-grid">
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artikel Kesehatan" class="article-image">
+                    <div class="article-content">
+                        <div class="article-category">Kesehatan Umum</div>
+                        <h3>Tips Menjaga Kesehatan di Musim Hujan</h3>
+                        <p>Musim hujan sering kali membawa berbagai penyakit. Pelajari cara menjaga kesehatan Anda dan keluarga...</p>
+                        <div class="article-meta">
+                            <span class="article-date">15 Des 2024</span>
+                            <span class="article-read-time">5 min baca</span>
+                        </div>
+                        <button class="btn-outline">Baca Selengkapnya</button>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artikel Kesehatan" class="article-image">
+                    <div class="article-content">
+                        <div class="article-category">Nutrisi</div>
+                        <h3>Panduan Gizi Seimbang untuk Keluarga</h3>
+                        <p>Memahami kebutuhan gizi yang tepat untuk setiap anggota keluarga adalah kunci hidup sehat...</p>
+                        <div class="article-meta">
+                            <span class="article-date">12 Des 2024</span>
+                            <span class="article-read-time">7 min baca</span>
+                        </div>
+                        <button class="btn-outline">Baca Selengkapnya</button>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Artikel Kesehatan" class="article-image">
+                    <div class="article-content">
+                        <div class="article-category">Mental Health</div>
+                        <h3>Mengelola Stres di Era Digital</h3>
+                        <p>Teknologi membawa kemudahan, namun juga dapat menjadi sumber stres. Pelajari cara mengelolanya...</p>
+                        <div class="article-meta">
+                            <span class="article-date">10 Des 2024</span>
+                            <span class="article-read-time">6 min baca</span>
+                        </div>
+                        <button class="btn-outline">Baca Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="articles-cta">
+                <a href="articles.html">
+                    <button class="btn-secondary">Lihat Semua Artikel</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>dkonsul</h3>
+                    <p>Platform kesehatan digital terpercaya untuk konsultasi dengan dokter kapan saja, di mana saja.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#layanan">Chat Dokter</a></li>
+                        <li><a href="#layanan">Video Call</a></li>
+                        <li><a href="#layanan">Janji Temu</a></li>
+                        <li><a href="doctors.html">Dokter</a></li>
+                        <li><a href="facilities.html">Fasilitas Kesehatan</a></li>
+                        <li><a href="articles.html">Artikel Kesehatan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@dkonsul.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 21 1234 5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jl. Kesehatan No. 123<br>Jakarta Selatan, 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 dkonsul. Semua hak dilindungi.</p>
+                <div class="footer-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat Layanan</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Masuk ke dkonsul</h3>
+                <button class="modal-close" id="closeLoginModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="modal-form" id="loginForm">
+                <div class="form-group" id="nameGroup" style="display: none;">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap (min. 8 karakter)">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Masukkan password (min. 8 karakter)" required>
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                    <label for="confirmPassword">Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Konfirmasi password">
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+                
+                <button type="submit" class="btn-primary" id="submitBtn">Masuk</button>
+                
+                <div class="form-toggle">
+                    <button type="button" id="toggleForm">Belum punya akun? Daftar di sini</button>
+                </div>
+            </form>
+            
+            <div class="social-login">
+                <div class="divider">
+                    <span>Atau</span>
+                </div>
+                <button class="btn-social" id="googleLogin">
+                    <i class="fab fa-google"></i>
+                    Masuk dengan Google
+                </button>
+                <button class="btn-social" id="facebookLogin">
+                    <i class="fab fa-facebook"></i>
+                    Masuk dengan Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask Me Modal -->
+    <div class="modal" id="askMeModal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <div class="chat-header">
+                    <i class="fas fa-robot"></i>
+                    <h3>Asisten Gejala dkonsul</h3>
+                </div>
+                <button class="modal-close" id="closeAskMeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <i class="fas fa-robot"></i>
+                        <p>Halo! Saya asisten virtual dkonsul. Saya akan membantu Anda mengenali gejala yang Anda alami. Ceritakan keluhan Anda atau pilih gejala di bawah ini:</p>
+                    </div>
+                </div>
+                
+                <div class="symptom-buttons" id="symptomButtons">
+                    <p class="symptom-label">Gejala umum:</p>
+                    <div class="symptom-grid">
+                        <button class="symptom-btn">Demam</button>
+                        <button class="symptom-btn">Batuk</button>
+                        <button class="symptom-btn">Pilek</button>
+                        <button class="symptom-btn">Sakit kepala</button>
+                        <button class="symptom-btn">Mual</button>
+                        <button class="symptom-btn">Diare</button>
+                        <button class="symptom-btn">Sakit perut</button>
+                        <button class="symptom-btn">Sesak napas</button>
+                        <button class="symptom-btn">Pusing</button>
+                        <button class="symptom-btn">Lemas</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <div class="input-group">
+                    <input type="text" id="chatInput" placeholder="Ketik gejala atau keluhan Anda...">
+                    <button id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">*Ini hanya penilaian awal. Konsultasi dengan dokter untuk diagnosis yang akurat.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content emergency-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Darurat Medis</h2>
+                <button class="modal-close" onclick="closeEmergencyModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-options">
+                    <div class="emergency-option">
+                        <h3>Darurat Mengancam Jiwa</h3>
+                        <p>Hubungi 119 segera untuk:</p>
+                        <ul>
+                            <li>Nyeri dada atau serangan jantung</li>
+                            <li>Kesulitan bernapas</li>
+                            <li>Pendarahan hebat</li>
+                            <li>Kehilangan kesadaran</li>
+                        </ul>
+                        <a href="tel:119" class="btn btn-emergency btn-large">
+                            <i class="fas fa-phone"></i> Hubungi 119
+                        </a>
+                    </div>
+                    <div class="emergency-option">
+                        <h3>Konsultasi Darurat</h3>
+                        <p>Untuk masalah mendesak tapi tidak mengancam jiwa:</p>
+                        <button class="btn btn-primary btn-large" onclick="bookUrgentConsultation()">
+                            <i class="fas fa-video"></i> Konsultasi Darurat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokter - dkonsul</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>dkonsul</h1></a>
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="index.html#beranda" class="nav-link">Beranda</a>
+                    <a href="index.html#layanan" class="nav-link">Layanan</a>
+                    <a href="doctors.html" class="nav-link active">Dokter</a>
+                    <a href="facilities.html" class="nav-link">Faskes</a>
+                    <a href="articles.html" class="nav-link">Artikel</a>
+                </nav>
+                
+                <div class="user-actions">
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <i class="fas fa-user"></i>
+                        <span id="userName"></span>
+                        <button class="btn-logout" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </div>
+                    <button class="btn-login" id="loginBtn">Masuk</button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Temukan Dokter Terbaik</h1>
+                <p>Konsultasi dengan lebih dari 1000+ dokter terpercaya</p>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <div class="search-input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="doctorSearch" placeholder="Cari nama dokter atau spesialisasi...">
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Spesialisasi</label>
+                        <select id="specialtyFilter">
+                            <option value="">Semua Spesialisasi</option>
+                            <option value="Dokter Umum">Dokter Umum</option>
+                            <option value="Spesialis Jantung">Spesialis Jantung</option>
+                            <option value="Spesialis Anak">Spesialis Anak</option>
+                            <option value="Spesialis Kulit">Spesialis Kulit</option>
+                            <option value="Spesialis Mata">Spesialis Mata</option>
+                            <option value="Spesialis Orthopedi">Spesialis Orthopedi</option>
+                            <option value="Spesialis Kandungan">Spesialis Kandungan</option>
+                            <option value="Spesialis Saraf">Spesialis Saraf</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Lokasi</label>
+                        <select id="locationFilter">
+                            <option value="">Semua Lokasi</option>
+                            <option value="Jakarta Pusat">Jakarta Pusat</option>
+                            <option value="Jakarta Selatan">Jakarta Selatan</option>
+                            <option value="Jakarta Barat">Jakarta Barat</option>
+                            <option value="Jakarta Timur">Jakarta Timur</option>
+                            <option value="Jakarta Utara">Jakarta Utara</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Ketersediaan</label>
+                        <select id="availabilityFilter">
+                            <option value="">Semua</option>
+                            <option value="online">Online</option>
+                            <option value="offline">Offline</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Urutkan</label>
+                        <select id="sortFilter">
+                            <option value="rating">Rating Tertinggi</option>
+                            <option value="experience">Pengalaman</option>
+                            <option value="fee">Biaya Terendah</option>
+                            <option value="reviews">Ulasan Terbanyak</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Results Count -->
+                <div class="results-count" id="resultsCount">
+                    Menampilkan 8 dari 8 dokter
+                </div>
+            </div>
+
+            <!-- Doctors Grid -->
+            <div class="doctors-grid" id="doctorsGrid">
+                <!-- Doctors will be populated by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Tidak ada dokter ditemukan</h3>
+                <p>Coba ubah filter pencarian Anda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>dkonsul</h3>
+                    <p>Platform kesehatan digital terpercaya untuk konsultasi dengan dokter kapan saja, di mana saja.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="index.html#layanan">Chat Dokter</a></li>
+                        <li><a href="index.html#layanan">Video Call</a></li>
+                        <li><a href="doctors.html">Dokter</a></li>
+                        <li><a href="facilities.html">Fasilitas Kesehatan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 dkonsul. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="doctors.js"></script>
+</body>
+</html>
